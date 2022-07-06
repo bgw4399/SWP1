@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function setColor(color){
+        var links = document.querySelectorAll('a');
+            var i = 0;
+            while(i<links.length){
+                links[i].style.color= color ;
+                i = i+1     
+        }
+    }
+    var Body = {
+        setColor:function(color){
+            document.querySelector('body').style.color = color;
+        },
+        setBackgroundColor:function(color){
+            document.querySelector('body').style.backgroundolor = color;
+        }
+    }
+    function BodySetColor(color){
+        document.querySelector('body').style.color = color;
+    }
+    function nightDayHandler(self){
+        var target = document.querySelector('body');
+        if(self.value ==='night'){
+            target.style.backgroundColor ='black';
+            target.style.color='white';
+            self.value = 'day';
+
+            setColor('powderblue');
+            
+        }else{
+            target.style.backgroundColor='white';
+            target.style.color='black';
+            self.value = 'night';
+            
+            setColor('blue')
+            }
+        }
+
+</script>
+<body>
+    <h1><a href="hello.html">WEB</a></h1>
+    <input type="button" value="night" onclick="
+        nightDayHandler(this);
+        ">
+        
+    <ol>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+    </ol>
+    <h2>javascript</h2>
+    <p>
+        하나 이상의 선택자를 포함한 DOMString. 유효한 CSS 선택자여야만 하며 아닐 경우 SYNTAX_ERR 예외가 발생합니다. 선택자로 DOM 요소 선택하기 문서를 참고해 선택자와 선택자 작성 방법을 더 알아보세요.
+        참고: CSS 표준 구문이 포함하는 문자가 아닌 경우 역슬래시로 이스케이프해야 합니다. JavaScript 또한 역슬래시로 이스케이프를 하기 때문에 특히 주의를 기울여야 합니다. 자세한 내용은 특수 문자 이스케이프 항목을 참고하세요.
+
+        반환
+        제공한 CSS 선택자를 만족하는 첫 번째 Element 객체. 결과가 없다면 null.
+
+        선택자를 만족하는 모든 요소의 목록이 필요하다면 querySelectorAll()을 대신 사용하세요.
+
+        예외
+        SYNTAX_ERR
+        selectors의 구문이 유효하지 않음.
+        </p>
+        <input type="button" value="night" onclick="
+        var target = document.querySelector('body');
+        if(this.value ==='night'){
+            target.style.backgroundColor ='black';
+            target.style.color='white';
+            this.value = 'day';
+        }else{
+            target.style.backgroundColor='white';
+            target.style.color='black';
+            this.value = 'night';
+        }
+        ">
+</body>
+</html>
